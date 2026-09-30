@@ -1,0 +1,22 @@
+# Environment
+.env
+venv/
+myevn/
+__pycache__/
+*.pyc
+
+# Python
+.pytest_cache/
+.coverage
+
+# Django
+db.sqlite3
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

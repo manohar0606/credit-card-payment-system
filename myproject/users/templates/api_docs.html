@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Payment System - API Documentation</title>
+</head>
+<body>
+
+<h1>Credit Card Payment System API Documentation</h1>
+
+<h2>Authentication APIs</h2>
+
+<h3>1. Register User</h3>
+<p><strong>Method:</strong> POST</p>
+<p><strong>URL:</strong> /api/register/</p>
+
+<pre>
+{
+    "username": "saimanohar",
+    "email": "saimanohar@example.com",
+    "first_name": "Sai",
+    "last_name": "manohar",
+    "password": "Password123"
+}
+</pre>
+
+<h3>2. Login</h3>
+<p><strong>Method:</strong> POST</p>
+<p><strong>URL:</strong> /api/login/</p>
+
+<pre>
+{
+    "username": "saimanohar",
+    "password": "Password123"
+}
+</pre>
+
+<p>Returns a JWT access token.</p>
+
+<h3>3. Logout</h3>
+<p><strong>Method:</strong> POST</p>
+<p><strong>URL:</strong> /api/logout/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+
+<h2>Card APIs</h2>
+
+<h3>4. Add Card</h3>
+<p><strong>Method:</strong> POST</p>
+<p><strong>URL:</strong> /api/add_card/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+<h3>5. View Cards</h3>
+<p><strong>Method:</strong> GET</p>
+<p><strong>URL:</strong> /api/view_card/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+<h3>6. Delete Card</h3>
+<p><strong>Method:</strong> DELETE</p>
+<p><strong>URL:</strong> /api/Delete_card/&lt;card_id&gt;/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+
+<h2>Transaction APIs</h2>
+
+<h3>7. Transaction History</h3>
+<p><strong>Method:</strong> GET</p>
+<p><strong>URL:</strong> /api/transactions/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+<p>Supported filters:</p>
+
+<ul>
+    <li>status</li>
+    <li>amount</li>
+    <li>date</li>
+</ul>
+
+<p>Example:</p>
+
+<pre>
+/api/transactions/?status=SUCCESS&amount=500&date=2026-09-29
+</pre>
+
+
+<h3>8. Export Transactions</h3>
+<p><strong>Method:</strong> GET</p>
+<p><strong>URL:</strong> /api/transactions/export/</p>
+<p><strong>Authentication:</strong> Admin Bearer Token</p>
+
+
+<h2>Testing API</h2>
+
+<h3>9. Protected Test</h3>
+<p><strong>Method:</strong> GET</p>
+<p><strong>URL:</strong> /api/protected_test/</p>
+<p><strong>Authentication:</strong> Bearer Token</p>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    default-libmysqlclient-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+WORKDIR /app/myproject
+
+EXPOSE 8001
+
+CMD ["uvicorn", "fast_api.main:app", "--host", "0.0.0.0", "--port", "8001"]
